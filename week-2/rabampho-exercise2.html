@@ -18,7 +18,7 @@ Description: Displays message to the console window
     <title>WEB 231 – Enterprise JavaScript I</title>
 </head>
 
-<div id="container">
+< id="container">
     <h1>Exercise 2.2 - Hello JavaScript</h1>
 
     <!--button with alter-->
@@ -28,7 +28,22 @@ Description: Displays message to the console window
 
     <!--bind with innerHTML-->
     <p id="txtMyWorld"></p>
+
+    <!--return to landing page-->
+    <a href="../index.html" class="return-home">Return</a>
 </div>
+
+<script>
+
+    //insert txt to txtMyWorld:
+    document.getElementById("txtMyWorld").innerHTML = 
+    "You are now in Rabampho's world";
+    
+    //crate alert box:
+    document.getElementById("btnMyCourse").addEventListener
+    ("click", function() {alert("WEB 231 - Enterprise JavaScript I")});
+</script>
+
 
 <body>
     

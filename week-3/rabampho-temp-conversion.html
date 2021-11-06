@@ -43,10 +43,10 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
                 <div class="form">
                     <div class="form-field">
                         <label for="txtFahrenheit">Fahrenheit value:</label>
-                        <input type="text" id="txtFahrenheit" class="input" name="fahrenheit" />
+                        <input type="text" id="txtFahrenheit" class="input" name="fahrenheit" value=""/>
                     </div>
                     <div class="form-field">
-                        <button type="submit" class="btn btn-primary full-width">Convert Temperature</button>
+                        <button type="submit" class="btn btn-primary full-width" onclick="toCelsius()">Convert Temperature</button>
                     </div>
                 </div>
             </div>
@@ -61,14 +61,22 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
     
             <div class="card-content">
                 <br />
-               
+               <p id="celsiusDisplay"></p>
             </div>
         </div>
     </div>
 
-    
+    <script>
+
+        function toCelsius() {
+            var txtFahrenheit = document.getElementById("txtFahrenheit").value;
+            document.getElementById("celsiusDisplay").innerHTML = 
+            ((parseFloat(txtFahrenheit) - 32) / 1.8).toFixed(2);
+        }
+
+
+    </script>
     
     </body>
-
 
 </html>

@@ -1,13 +1,12 @@
 <!--
 ===================================================    
-Title:  Assignment 2.3 Values and Variables
+Title:  Assignment 3.2 Temperature Conversion App
 Author: Professor Krasso
-Date:   31 October 2021
+Date:  06 November 2021
 Modified By: Orawan Rabampho
-Description: Payroll html binding txt, insert date
-             and currency.
-Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.html
-        https://www.techonthenet.com/js/number_tofixed.php
+Description: Using JavaScript to convert fahrenheit to celsius
+Source: https://www.w3schools.com/jsref/event_onclick.asp 
+        https://www.w3schools.com/jsref/prop_text_value.asp 
 ====================================================
 --> 
 
@@ -26,18 +25,20 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
 </head>
 
 <body>
-
+    <!--App header-->
     <header>
-        <h1 class="app-header">Welcome to the Temperature Conversion App!”</h1>
+        <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
     </header>
     
+    <!-- Container for app-->
     <div id="container">
-    
+
+    <!--Fahrenheit value input form-->
         <div class="card">
             <div class="card-title">
                 Fahrenheit to Celsius Converter
             </div>
-    
+            
             <div class="card-content">
     
                 <div class="form">
@@ -45,6 +46,8 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
                         <label for="txtFahrenheit">Fahrenheit value:</label>
                         <input type="text" id="txtFahrenheit" class="input" name="fahrenheit" value=""/>
                     </div>
+
+                    <!--onClick button to convert temperature-->
                     <div class="form-field">
                         <button type="submit" class="btn btn-primary full-width" onclick="toCelsius()">Convert Temperature</button>
                     </div>
@@ -53,12 +56,12 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
         </div>
     
         <br /><br />
-    
+        <!--Temperature conversion display card -->
         <div class="card">
             <div class="card-title">
                 Conversion Results
             </div>
-    
+            <!--Celsius display after conversion-->
             <div class="card-content">
                <p id="celsiusDisplay"></p>
             </div>
@@ -70,14 +73,16 @@ Source: https://learnjavascript.co.uk/reference/globals/date/tolocaletimestring.
 
     </div>
 
+    <!--ending body and start javascript-->
     <script>
 
+        //define and retreat fahrenheit value
         function toCelsius() {
             var txtFahrenheit = document.getElementById("txtFahrenheit").value;
-            document.getElementById("celsiusDisplay").innerHTML = 
-            ((parseFloat(txtFahrenheit) - 32) / 1.8).toFixed(2);
-        }
 
+        //converting fahrenheit to celsius then display the result
+        document.getElementById("celsiusDisplay").innerHTML = ((parseFloat(txtFahrenheit) - 32) / 1.8).toFixed(2);
+        }
 
     </script>
     

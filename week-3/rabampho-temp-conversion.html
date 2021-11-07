@@ -25,6 +25,7 @@ Source: https://www.w3schools.com/jsref/event_onclick.asp
 </head>
 
 <body>
+    
     <!--App header-->
     <header>
         <h1 class="app-header">Welcome to the Temperature Conversion App!</h1>
@@ -56,11 +57,13 @@ Source: https://www.w3schools.com/jsref/event_onclick.asp
         </div>
     
         <br /><br />
+
         <!--Temperature conversion display card -->
         <div class="card">
             <div class="card-title">
                 Conversion Results
             </div>
+
             <!--Celsius display after conversion-->
             <div class="card-content">
                <p id="celsiusDisplay"></p>
@@ -73,10 +76,10 @@ Source: https://www.w3schools.com/jsref/event_onclick.asp
 
     </div>
 
-    <!--ending body and start javascript-->
+    <!--end body and start javascript-->
     <script>
 
-        //define and retreat fahrenheit value
+        //define and retreat fahrenheit value for onClick "toCelsius()"
         function toCelsius() {
             var txtFahrenheit = document.getElementById("txtFahrenheit").value;
 

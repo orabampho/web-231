@@ -1,11 +1,14 @@
 <!--
 ===================================================    
-Title:  Assignment 4 - Number Guessing Game
+Title:  Assignment 4.2 - Number Guessing Game
 Author: Professor Krasso
 Date:  14 November 2021
 Modified By: Orawan Rabampho
-Description: Guessing number between 1 and 10
-Source:  
+Description: Guessing number between 1 and 10 
+    using const rnd = Math.floor((Math.random() * 10) +1)
+    to select random number.
+Source:  https://www.geeksforgeeks.org/number-guessing-game-using-javascript/
+         https://www.youtube.com/watch?v=o6hvejKRtUw
 ====================================================
 --> 
 
@@ -36,36 +39,75 @@ Source:
             Pick a number between 1 and 10
         </div>
 
+        <!--input form-->
         <div class="card-content">
             <div class="form">
                 <div class="form-field">
-                    <label for="txtBookName">Guess the number:</label>
-                    <input type="text" id="txtBookName" class="input" name="txtBookName" />
+                    <label for="txtMyNumber">Guess the number:</label>
+                    <input type="text" id="txtMyNumber" class="txtMyNumber">
                 </div>
+
+                <!--submit button-->
                 <div class="form-field">
-                    <button type="submit" class="btn btn-primary full-width">Submit</button>
+                    <input type="submit" class="btn btn-primary full-width" 
+                    value="Submit" id="btnSubmit">
                 </div>
             </div> <!--close form-->
         </div> <!--close card-content-->
     </div> <!--close card for input form-->
 
-    <br /><br />
-
-    <div class="card">
+     <!--display result after user input number -->
+     <br><br>
+     <div class="card">
         <div class="card-title">
             Results
         </div>
 
-        <!--Celsius display after conversion-->
+        <!--result display after submit-->
         <div class="card-content">
-           <p id="guessDisplay"></p>
+           <p id="resultDisplay"></p>
         </div>
-    </div> <!--close card output-->
+    </div>
+
 
     <!--return to landing page-->
     <br>
     <a href="../index.html" class="return-home">Return</a>
 
-</div> <!--close container-->
+</div> <!--close container and end input section-->
+
+<!--javascript start-->
+<script>
+
+    // random value generated at onclick function
+    const rnd = Math.floor((Math.random() * 10) +1); 
+
+
+    document.getElementById("btnSubmit").onclick = function() {
+
+    //number guessed by user
+
+    let myNumber = document.getElementById("txtMyNumber").value;
+
+    if(myNumber == rnd)
+   {    
+    /* if user guessed the correct number */   
+    document.getElementById("resultDisplay").innerHTML = "Congratulations! You picked the correct number!";
+   }
+   else if(myNumber > rnd) 
+   {    
+      /* if guessed number is greater than actual number*/ 
+       document.getElementById("resultDisplay").innerHTML =  "The number is less than " + myNumber;
+   }
+   else
+   {
+      /* if guessed number is less than actual number*/ 
+       document.getElementById("resultDisplay").innerHTML = "The number is greater than " + myNumber
+   }
+
+    }
+    
+</script>
 
 </body>
+</html>

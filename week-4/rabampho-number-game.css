@@ -8,3 +8,9 @@ Description: Guessing number between 1 and 10
 Source:  
 ====================================================
 */
+
+h1.app-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}

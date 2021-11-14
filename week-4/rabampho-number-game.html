@@ -26,7 +26,7 @@ Source:
 <body>
 
 <header>
-    <h1>Welcome to the numbers game!</h1>
+    <h1 class="app-header">Welcome to the numbers game!</h1>
 </header>
 
 <div id="container">
@@ -39,17 +39,33 @@ Source:
         <div class="card-content">
             <div class="form">
                 <div class="form-field">
-                    <label for="txtBookName">Book name:</label>
+                    <label for="txtBookName">Guess the number:</label>
                     <input type="text" id="txtBookName" class="input" name="txtBookName" />
                 </div>
                 <div class="form-field">
-                    <button type="submit" class="btn btn-primary full-width">Create Book</button>
+                    <button type="submit" class="btn btn-primary full-width">Submit</button>
                 </div>
             </div> <!--close form-->
         </div> <!--close card-content-->
     </div> <!--close card for input form-->
 
-</div> <!--close container-->
+    <br /><br />
 
+    <div class="card">
+        <div class="card-title">
+            Results
+        </div>
+
+        <!--Celsius display after conversion-->
+        <div class="card-content">
+           <p id="guessDisplay"></p>
+        </div>
+    </div> <!--close card output-->
+
+    <!--return to landing page-->
+    <br>
+    <a href="../index.html" class="return-home">Return</a>
+
+</div> <!--close container-->
 
 </body>

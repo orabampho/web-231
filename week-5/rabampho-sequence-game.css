@@ -1,0 +1,24 @@
+/*
+===================================================    
+Title:  Assignment 4.2 - Number Guessing Game
+Author: Professor Krasso
+Date:  14 November 2021
+Modified By: Orawan Rabampho
+Description: Guessing number between 1 and 10 
+    using const rnd = Math.floor((Math.random() * 10) +1)
+    to select random number.
+Source:  https://www.geeksforgeeks.org/number-guessing-game-using-javascript/
+         https://www.youtube.com/watch?v=o6hvejKRtUw
+====================================================
+*/
+
+h1.app-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+#resultDisplay {
+    font-size: 28px;
+    text-align: center;
+}

@@ -83,8 +83,7 @@ Source:
 
 //start onclick event
 
-
-    document.getElementById("btnDisplaySequence").onclick = function displaySequence() {
+document.getElementById("btnDisplaySequence").onclick = function displaySequence() {
         let choice = document.getElementById("sequence").value;
         let fibonacci = document.getElementById("fibonacci").value;
         let even = document.getElementById("even").value;
@@ -103,10 +102,40 @@ Source:
             document.getElementById("resultDisplay").innerHTML = fibonacciSequenceText.slice(0,-2);
             
             console.log (fibonacciSequenceText);
-        }
+        } // close fibonacci 
            
-        }
-    }
+        } // close fibonacci selection
+
+        // even number event start the if statement
+        if (choice === "even") {
+            let evenText = "";
+            for (let num = 1; num < 20; num++) {
+            if (num % 2 === 0) {
+                evenText += (num + " , ")
+                console.log (evenText);
+
+                document.getElementById("resultDisplay").innerHTML = evenText.slice(0,-2);
+            } //close the if statement to output even number only          
+        } //close even number code to define i, only display number less than 20
+    } //close even selection
+
+     // odd number event start the if statement
+     if (choice === "odd") {
+            let oddText = "";
+            for (let num = 1; num < 20; num++) {
+            if (num % 2 !== 0) {
+                oddText += (num + " , ")
+                console.log (oddText);
+
+                document.getElementById("resultDisplay").innerHTML = oddText.slice(0,-2);
+            } //close the if statement to output odd number only          
+        } //close odd number code to define i, only display number less than 20
+    } //close odd selection
+
+    // when select is selected
+
+    } //close onclick function to start the game
+    
 
 </script>
 

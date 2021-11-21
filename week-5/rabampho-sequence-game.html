@@ -4,9 +4,15 @@ Title:  Assignment 5 - Sequence Game
 Author: Professor Krasso
 Date:  20 November 2021
 Modified By: Orawan Rabampho
-Description: Display numbers in the Fibonacci sequence. 
-    
-Source:  
+Description: Display numbers in the Fibonacci sequence,
+display even and odd number less then 20.  Display alter 
+for invalid selection.     
+Source:  JavaScript if..else 
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_elseif
+drop-down tag - https://www.w3schools.com/tags/tag_select.asp
+While loop - https://www.w3schools.com/jsref/jsref_for.asp
+odd and even number - 
+https://wsvincent.com/javascript-print-odd-or-even-numbers/
 ====================================================
 --> 
 <!DOCTYPE html>
@@ -35,7 +41,7 @@ Source:
             Sequence Selection Form
         </div>
 
-        <!--input form-->
+        <!--input selections-->
         <div class="card-content">
             <div class="form">
                 <div class="form-field">
@@ -83,6 +89,7 @@ Source:
 
 //start onclick event
 
+//define selections value and start onclick function
 document.getElementById("btnDisplaySequence").onclick = function displaySequence() {
         let choice = document.getElementById("sequence").value;
         let fibonacci = document.getElementById("fibonacci").value;
@@ -90,43 +97,56 @@ document.getElementById("btnDisplaySequence").onclick = function displaySequence
         let odd = document.getElementById("odd").value;
         let select = document.getElementById("select").value;
 
+        // define fibonacci each var value  
         if (choice === "fibonacci") {
             let num1 = 0, num2 = 1, next = 0;
             let fibonacciSequenceText = "";
+
+        //calculate fibonacci number and display number less than 40      
         while (num1 < 40) {
             fibonacciSequenceText += (num1 + " , ");
             next = num1+num2;
             num1 = num2;
             num2 = next;
-
+            
+            //display result to card-content
             document.getElementById("resultDisplay").innerHTML = fibonacciSequenceText.slice(0,-2);
             
+            //test function in the console
             console.log (fibonacciSequenceText);
         } // close fibonacci 
            
         } // close fibonacci selection
 
-        // even number event start the if statement
+        // even number event start the if statement to display even number
+            //less then 20
         if (choice === "even") {
             let evenText = "";
             for (let num = 1; num < 20; num++) {
             if (num % 2 === 0) {
                 evenText += (num + " , ")
+                
+                //test function in console
                 console.log (evenText);
 
+                //display result in the card-content
                 document.getElementById("resultDisplay").innerHTML = evenText.slice(0,-2);
             } //close the if statement to output even number only          
         } //close even number code to define i, only display number less than 20
     } //close even selection
 
-     // odd number event start the if statement
+     // odd number event start the if statement to display even number
+        //less then 20
      if (choice === "odd") {
             let oddText = "";
             for (let num = 1; num < 20; num++) {
             if (num % 2 !== 0) {
                 oddText += (num + " , ")
+               
+                //test function in console
                 console.log (oddText);
 
+                //display result in the card-content
                 document.getElementById("resultDisplay").innerHTML = oddText.slice(0,-2);
             } //close the if statement to output odd number only          
         } //close odd number code to define i, only display number less than 20

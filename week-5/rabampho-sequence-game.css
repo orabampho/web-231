@@ -1,14 +1,18 @@
 /*
 ===================================================    
-Title:  Assignment 4.2 - Number Guessing Game
+Title:  Assignment 5 - Sequence Game
 Author: Professor Krasso
-Date:  14 November 2021
+Date:  20 November 2021
 Modified By: Orawan Rabampho
-Description: Guessing number between 1 and 10 
-    using const rnd = Math.floor((Math.random() * 10) +1)
-    to select random number.
-Source:  https://www.geeksforgeeks.org/number-guessing-game-using-javascript/
-         https://www.youtube.com/watch?v=o6hvejKRtUw
+Description: Display numbers in the Fibonacci sequence,
+display even and odd number less then 20.  Display alter 
+for invalid selection.     
+Source:  JavaScript if..else 
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_elseif
+drop-down tag - https://www.w3schools.com/tags/tag_select.asp
+While loop - https://www.w3schools.com/jsref/jsref_for.asp
+odd and even number - 
+https://wsvincent.com/javascript-print-odd-or-even-numbers/
 ====================================================
 */
 

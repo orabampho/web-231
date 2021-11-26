@@ -1,0 +1,28 @@
+/*
+===================================================    
+Title:  Assignment 5 - Sequence Game
+Author: Professor Krasso
+Date:  20 November 2021
+Modified By: Orawan Rabampho
+Description: Display numbers in the Fibonacci sequence,
+display even and odd number less then 20.  Display alter 
+for invalid selection.     
+Source:  JavaScript if..else 
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_elseif
+drop-down tag - https://www.w3schools.com/tags/tag_select.asp
+While loop - https://www.w3schools.com/jsref/jsref_for.asp
+odd and even number - 
+https://wsvincent.com/javascript-print-odd-or-even-numbers/
+====================================================
+*/
+
+h1.app-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+#resultDisplay {
+    font-size: 28px;
+    text-align: center;
+}

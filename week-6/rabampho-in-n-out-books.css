@@ -1,18 +1,16 @@
 /*
 ===================================================    
-Title:  Assignment 5 - Sequence Game
+Title:  Assignment 6.2 - In-N-Out-Books
 Author: Professor Krasso
-Date:  20 November 2021
+Date:  28 November 2021
 Modified By: Orawan Rabampho
-Description: Display numbers in the Fibonacci sequence,
-display even and odd number less then 20.  Display alter 
-for invalid selection.     
+Description: Display selected table using data from JavaScript
+    objects literals.     
 Source:  JavaScript if..else 
 https://www.w3schools.com/js/tryit.asp?filename=tryjs_elseif
-drop-down tag - https://www.w3schools.com/tags/tag_select.asp
-While loop - https://www.w3schools.com/jsref/jsref_for.asp
-odd and even number - 
-https://wsvincent.com/javascript-print-odd-or-even-numbers/
+Toggle Hide/Show - 
+    https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+JavaScript Object - https://www.w3schools.com/js/js_objects.asp
 ====================================================
 */
 
@@ -26,3 +24,29 @@ h1.app-header {
     font-size: 28px;
     text-align: center;
 }
+
+#listTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#listTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+#listTable td, #listTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#listTable tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+

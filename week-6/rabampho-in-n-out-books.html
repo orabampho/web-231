@@ -1,18 +1,16 @@
 <!--
 ===================================================    
-Title:  Assignment 5 - Sequence Game
+Title:  Assignment 6.2 - In-N-Out-Books
 Author: Professor Krasso
-Date:  20 November 2021
+Date:  28 November 2021
 Modified By: Orawan Rabampho
-Description: Display numbers in the Fibonacci sequence,
-display even and odd number less then 20.  Display alter 
-for invalid selection.     
+Description: Display selected table using data from JavaScript
+    objects literals.     
 Source:  JavaScript if..else 
 https://www.w3schools.com/js/tryit.asp?filename=tryjs_elseif
-drop-down tag - https://www.w3schools.com/tags/tag_select.asp
-While loop - https://www.w3schools.com/jsref/jsref_for.asp
-odd and even number - 
-https://wsvincent.com/javascript-print-odd-or-even-numbers/
+Toggle Hide/Show - 
+    https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+JavaScript Object - https://www.w3schools.com/js/js_objects.asp
 ====================================================
 --> 
 <!DOCTYPE html>
@@ -33,6 +31,7 @@ https://wsvincent.com/javascript-print-odd-or-even-numbers/
         <h1 class="app-header">Welcome to In-N-Out-Books!</h1>
     </header>
     
+    <!--input container-->
     <div id="container">
     
         <div class="card">
@@ -44,19 +43,18 @@ https://wsvincent.com/javascript-print-odd-or-even-numbers/
             <div class="card-content">
                 <div class="form">
                     <div class="form-field">
-                        <label for="sequence">Choose a number sequence:</label>
-                        <select name="sequence" id="sequence" class="drop-down-menu">
+                        <label for="choose">Choose a listing:</label>
+                        <select name="favoriteList" id="favoriteList" class="drop-down-menu">
                             <option id="select" value="select">Select</option>
-                            <option id="fibonacci" value="fibonacci">Fibonacci Sequence</option>
-                            <option id="even" value="even">Even Numbers</option>
-                            <option id="odd" value="odd">Odd Numbers</option>
+                            <option id="books" value="books">Top 3 Favorite Books</option>
+                            <option id="authors" value="authors">Top 3 Favorite Authors</option>
                         </select>
                     </div>
     
                     <!--submit button-->
                     <div class="form-field">
                         <input type="submit" class="btn btn-primary full-width" 
-                        value="Display Sequence" id="btnDisplaySequence">
+                        value="Display Listing" id="btnDisplayTable">
                     </div>
                 </div> <!--close form-->
             </div> <!--close card-content-->
@@ -64,23 +62,177 @@ https://wsvincent.com/javascript-print-odd-or-even-numbers/
     
          <!--display result after user input number -->
          <br><br>
-         <div class="card">
+         
+        <!--container for top 3 favorite books-->
+         <div id="favoriteBook" class="card">
             <div class="card-title">
-               Sequence Results
+                Top 3 Favorite Books
             </div>
-    
-            <!--result display after submit-->
+
             <div class="card-content">
-               <p id="resultDisplay"></p>
+                <br />
+                <table id="listTable" >
+                        <!--colum headers-->
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Title</th>
+                            <th>Pages</th>
+                        </tr>
+                        <!--cells to display books info for javascript array-->
+                        <tr>
+                            <td id="txtBookISBN1"></td>
+                            <td id="txtBookTitle1"></td>
+                            <td id="txtBookPages1"></td>
+                        </tr> 
+                        <tr>
+                            <td id="txtBookISBN2"></td>
+                            <td id="txtBookTitle2"></td>
+                            <td id="txtBookPages2"></td>
+                        </tr>
+                        <tr>
+                            <td id="txtBookISBN3"></td>
+                            <td id="txtBookTitle3"></td>
+                            <td id="txtBookPages3"></td>
+                        </tr>                              
+                </table>
             </div>
         </div>
-    
+    </div>
+
+        <!--container for top 3 authors-->
+        <div id="favoriteAuthors" class="card">
+            <div class="card-title">
+                Top 3 Favorite Authors
+            </div>
+
+            <div class="card-content">
+                <br />
+                <table id="listTable" >
+                        <tr>
+                            <th>name</th>
+                            <th>Genre</th>
+                        </tr>
+                            <tr>
+                                <td id="txtAuthorName1"></td>
+                                <td id="txtAuthorGenre1"></td>
+                            </tr> 
+                            <tr>
+                                <td id="txtAuthorName2"></td>
+                                <td id="txtAuthorGenre2"></td>
+                            </tr> 
+                            <tr>
+                                <td id="txtAuthorName3"></td>
+                                <td id="txtAuthorGenre3"></td>
+                            </tr>                                       
+                    </table>
+                </div>
+            </div>
+        </div>
+
     
         <!--return to landing page-->
         <br>
         <a href="../index.html" class="return-home">Return</a>
     
     </div> <!--close container and end input section-->
+
+<!--javascript start-->
+
+<script>
+
+    //define selections value and start onclick function
+    let choice = document.getElementById("favoriteList");
+    let books = document.getElementById("favoriteBook");
+    let authors = document.getElementById("favoriteAuthors");
+    let select = document.getElementById("select");
+        
+    //on page load tables are hidden
+    books.style.display = 'none';
+    authors.style.display = 'none';
+
+    //start onclick function     
+    document.getElementById("btnDisplayTable").onclick = function () {
+        let choice = document.getElementById('favoriteList').value;
+    
+    //when favorite books selected book table display and author table hidden
+    if (choice === "books"){
+        books.style.display = "block";
+        authors.style.display = "none";
+    }
+
+    //when author selected table display and book table stay hidden
+    else if (choice === "authors"){
+        books.style.display = "none";
+        authors.style.display = "block";
+    }
+
+    //when select choose both tables hidden
+    else if (choice === "select"){
+        books.style.display = 'none';
+        authors.style.display = 'none';
+    }
+    
+    //favorite books info
+    const book1 = {
+        isbn: "1594631931", 
+        title: "The Kit Runner", 
+        pages: "400"};
+
+    const book2 = {
+        isbn: "0679781587", 
+        title: "Memoirs of a Geisha", 
+        pages: "434"};
+    
+    const book3 = {
+        isbn: "0156027328", 
+        title : "Life of Pi", 
+        pages: "326"};
+
+    //books info extracted from the array and display in the book table
+    document.getElementById("txtBookISBN1").innerHTML = book1.isbn;
+    document.getElementById("txtBookTitle1").innerHTML = book1.title;
+    document.getElementById("txtBookPages1").innerHTML = book1.pages;
+    
+    document.getElementById("txtBookISBN2").innerHTML = book2.isbn;
+    document.getElementById("txtBookTitle2").innerHTML = book2.title;
+    document.getElementById("txtBookPages2").innerHTML = book2.pages;
+   
+    document.getElementById("txtBookISBN3").innerHTML = book3.isbn;
+    document.getElementById("txtBookTitle3").innerHTML = book3.title;
+    document.getElementById("txtBookPages3").innerHTML = book3.pages;
+
+    //favorite authors info
+    const author1 = {
+        name: "Khaled Hosseini",
+        genre: "Fiction New-Age"
+    };
+
+    const author2 = {
+        name: "Arthur Golden",
+        genre: "Fiction Fiction Novel"
+    };
+
+    const author3 = {
+        name: "Jocko Willink",
+        genre: "Biography"
+    };
+
+    //Authors info extracted from the array and display in the author table
+    document.getElementById("txtAuthorName1").innerHTML = author1.name;
+    document.getElementById("txtAuthorGenre1").innerHTML = author1.genre;
+    
+    document.getElementById("txtAuthorName2").innerHTML = author2.name;
+    document.getElementById("txtAuthorGenre2").innerHTML = author2.genre;
+
+    document.getElementById("txtAuthorName3").innerHTML = author3.name;
+    document.getElementById("txtAuthorGenre3").innerHTML = author3.genre;
+
+} //close onclick btnDisplayTable event      
+
+
+
+</script> 
         
 </body>
 </html>
+

@@ -25,13 +25,13 @@ h1.app-header {
     text-align: center;
 }
 
-#listTable {
+.listTable {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 30px;
 }
 
-#listTable th {
+.listTable th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -39,12 +39,12 @@ h1.app-header {
     color: #fff;
 }
 
-#listTable td, #listTable th {
+.listTable td, #listTable th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-#listTable tr:hover {
+.listTable tr:hover {
     background-color: #D6A800;
     color: #4F3674;
     cursor: pointer;

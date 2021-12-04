@@ -312,6 +312,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
     document.getElementById("txtProductQuantity5").innerHTML = products5.quantity;
     document.getElementById("txtProductValue5").innerHTML = (products5.price * products5.quantity).toFixed(2);
 
+    //test products array inside console
     console.table([products1, products2, products3, products4, products5])
 
     //services class
@@ -347,6 +348,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
     document.getElementById("txtHourlyRate3").innerHTML = services3.rate.toFixed(2);
     document.getElementById("txtMinimum3").innerHTML = services3.minimum;
 
+    //test services array inside console
     console.table([services1, services2, services3])
     
     //employees class
@@ -394,6 +396,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
     document.getElementById("txtFirstName5").innerHTML = employees5.firstName;
     document.getElementById("txtSalary5").innerHTML = employees5.salary.toFixed(2);
 
+    //test employees info inside console
     console.table([employees1, employees2, employees3, employees4, employees5])
 
 } //close onclick function

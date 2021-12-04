@@ -235,31 +235,30 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
     document.getElementById("btnDisplayTable").onclick = function () {
         let choice = document.getElementById('choiceList').value;
     
-    //when favorite books selected book table display and author table hidden
-    if (choice === "products"){
+    switch(choice){
+        case "products":
         products.style.display = "block";
         services.style.display = "none";
         employees.style.display = "none";
-    }
+    break;
 
-    //when author selected table display and book table stay hidden
-    else if (choice === "services"){
+        case "services":
         products.style.display = "none";
         services.style.display = "block";
         employees.style.display = "none";
-    }
+    break;
 
-    else if (choice === "employees"){
+        case "employees":
         products.style.display = "none";
         services.style.display = "none";
         employees.style.display = "block";
-    }
+    break;
 
-    //when select choose both tables hidden
-    else if (choice === "select"){
+        case "select":
         products.style.display = "none";
         services.style.display = "none";
         employees.style.display = "none";
+    default: break;
     }
 
     //products class

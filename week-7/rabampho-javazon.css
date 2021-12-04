@@ -1,0 +1,49 @@
+/*
+===================================================    
+Title:  Assignment 6.22 - Javazon
+Author: Professor Krasso
+Date:  04 December 2021
+Modified By: Orawan Rabampho
+Description: Display JavaScript class and in HTML table     
+Source:  JavaScript classes 
+https://www.w3schools.com/js/js_classes.asp
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+====================================================
+*/
+
+h1.app-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+#resultDisplay {
+    font-size: 28px;
+    text-align: center;
+}
+
+.listTable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.listTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: #fff;
+}
+
+.listTable td, #listTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.listTable tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+

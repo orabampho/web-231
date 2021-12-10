@@ -1,0 +1,127 @@
+<!--
+===================================================    
+Title:  Assignment 8.2 - Alphabet Game
+Author: Professor Krasso
+Date:  10 December 2021
+Modified By: Orawan Rabampho
+Description: Display alphabet array and display alphabet letter with 
+    letter position    
+Source:  JavaScript array - https://www.w3schools.com/js/js_arrays.asp
+    Alphabet with position - https://www.youtube.com/watch?v=CxQ8Ip4WiLk&t=370s
+====================================================
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- external CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" type="text/css" href="rabampho-alphabet-game.css">
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+</head>
+<body>
+    <header>
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+    </header>
+    
+     <!-- Container for app-->
+     <div id="container">
+
+        <!--Fahrenheit value input form-->
+            <div class="card">
+                <div class="card-title">
+                   Alphabet Number Form
+                </div>
+                <!--input form to get letter position value-->
+                <div class="card-content">
+                    <div class="form">
+                        <div class="form-field">
+                            <label for="txtAlphabet">Alphabet Letter Position</label>
+                            <input type="text" id="txtPosition" class="input" name="alphabet" value=""/>
+                        </div>
+    
+                        <!--onClick button to display letter from the position value-->
+                        <div class="form-field">
+                            <input type="submit" id= "btnFindLetter" class="btn btn-primary full-width" 
+                                value="Find Letter"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <br /><br />
+    
+            <!--container to display all the alphabet letters -->
+            <div class="card">
+                <div class="card-title">
+                    Letters in the Alphabet
+                </div>
+    
+                <div class="card-content">
+                   <p id="alphabetDisplay"></p>
+                </div>
+            </div>
+
+            <!--container to display letter by input position value-->
+
+            <br /><br />
+            <div class="card">
+                <div class="card-title">
+                    Results
+                </div>
+        
+                <div class="card-content">
+                   <p id="resultDisplay"></p>
+                </div>
+            </div>
+
+        <!--return to landing page-->
+        <br>
+        <a href="../index.html" class="return-home">Return</a>
+    
+<!--close container and end input section-->
+
+<!--javascript start-->
+<script>
+
+//alphabet array 
+let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    console.log(alphabet)
+//empty container to hold letters
+let alphabetOutput = "";
+    
+    //using for..in loop to display letter with common between each letter
+    for (let i in alphabet) {
+        alphabetOutput = alphabetOutput + alphabet[i] + ", ";
+    }
+        //to display alphabetOutput value in console for debugging
+        console.log(alphabetOutput.slice(0, -2));
+
+    //display alphabet letters in content container
+    document.getElementById("alphabetDisplay").innerHTML = alphabetOutput.slice(0, -2); 
+    
+//define value and start onclick function
+document.getElementById("btnFindLetter").onclick = function displayLetter() {
+    let pos = document.getElementById("txtPosition").value; // define pos value from txtPosition input
+    let letter = alphabet[pos - 1]; // define letter value and - 1 because the array at 0 instead of 1
+    console.log(pos); // display txtPosition value in console
+    console.log(letter); // display letter matching the position value
+
+    //if...else statement to determine the value and display the result in the content container
+    if (letter === undefined){
+        document.getElementById("resultDisplay").innerHTML = "There are not " +  pos  + " letter in the alphabet";
+    } 
+    else {
+          document.getElementById("resultDisplay").innerHTML = letter + " is at position " + pos + " in the alphabet."; 
+        }
+
+}//close onclick function
+
+</script>
+</body>
+</html>
+

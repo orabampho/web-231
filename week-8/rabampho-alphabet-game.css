@@ -1,0 +1,30 @@
+/*
+===================================================    
+Title:  Assignment 8.2 - Alphabet Game
+Author: Professor Krasso
+Date:  10 December 2021
+Modified By: Orawan Rabampho
+Description: Display alphabet array and display alphabet letter with 
+    letter position    
+Source:  JavaScript array - https://www.w3schools.com/js/js_arrays.asp
+    Alphabet with position - https://www.youtube.com/watch?v=CxQ8Ip4WiLk&t=370s
+====================================================
+*/
+
+h1.app-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+#alphabetDisplay {
+    font-size: 28px;
+    text-align: center;
+}    
+
+#resultDisplay {
+    font-size: 28px;
+    text-align: center;
+}
+
+

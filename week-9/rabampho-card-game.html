@@ -1,0 +1,75 @@
+<!--
+===================================================    
+Title:  Assignment 8.2 - Alphabet Game
+Author: Professor Krasso
+Date:  10 December 2021
+Modified By: Orawan Rabampho
+Description: Display alphabet array and display alphabet letter with 
+    letter position    
+Source:  JavaScript array - https://www.w3schools.com/js/js_arrays.asp
+    Alphabet with position - https://www.youtube.com/watch?v=CxQ8Ip4WiLk&t=370s
+====================================================
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- external CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../global.css">
+    <link rel="stylesheet" type="text/css" href="rabampho-card-game.css">
+    <!-- Google fonts for Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>WEB 231 – Enterprise JavaScript I</title>
+</head>
+<body>
+    <header>
+        <h1 class="app-header">Welcome to the Card Game!</h1>
+    </header>
+    
+     <!-- Container for app-->
+     <div id="container">
+
+        <!--Fahrenheit value input form-->
+            <div class="card">
+                <div class="card-title">
+                   Card Dealer
+                </div>
+    
+                        <!--onClick button to display letter from the position value-->
+                        <div class="form-field">
+                            <input type="submit" id= "btnDealCards" class="btn btn-primary full-width" 
+                                value="Deal Cards"></input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <br />
+    
+            <!--return to landing page-->
+       
+        <a href="../index.html" class="return-home">Return</a>
+    
+
+            <!--container to display letter by input position value-->
+
+            <br /><br />
+            <div class="card">
+                <div class="card-title">
+                    Shuffled Cards
+                </div>
+        
+                <div class="card-content">
+                   <p id="resultDisplay"></p>
+                </div>
+            </div>
+
+       
+<!--close container and end input section-->
+
+
+</body>
+</html>
+

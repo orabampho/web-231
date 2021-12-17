@@ -56,20 +56,99 @@ Source:  JavaScript array - https://www.w3schools.com/js/js_arrays.asp
             <!--container to display letter by input position value-->
 
             <br /><br />
+            <div id="card-display">
             <div class="card">
                 <div class="card-title">
                     Shuffled Cards
                 </div>
         
-                <div class="card-content">
-                   <p id="resultDisplay"></p>
+                <div class="card-content" id="player-card">
+                  
                 </div>
             </div>
-
+        </div>
        
 <!--close container and end input section-->
 
+<script>
 
+//array for card faces and suits
+
+class Card {
+        constructor (face, suit) {
+            this.face = face;
+            this.suit = suit;   
+        }
+    }
+
+class Dealer {
+    constructor (){
+        getDeckOfCards ();
+    }
+}
+
+var faces = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+var suits = ["Hearts","Diamonds","Clubs","Spades"];
+var CARD_COUNT = 52;
+var cards = [];
+
+function getDeckOfCards () {
+   for (let count= 0; count < this.CARD_COUNT; count++){
+
+    this.cards[count] = new Card(this.faces[count % 13], 
+        this.suits[Math.floor(count / 13)]);
+    }
+}
+ 
+function shuffle () {
+    for (let firstCard= 0; firstCard < this.CARD_COUNT; firstCard++) {
+        var tempCard = this.cards[firstCard];
+        var secondCard = Math.floor(Math.random() * this.CARD_COUNT);
+        this.cards[firstCard] = this.cards[secondCard];
+        this.cards[secondCard] = tempCard;
+    }
+}
+
+function buildPlayingCard(card, suitIcon, faceColor, suitColor) {
+    return `
+    <div class="card player-card">
+        <div class="card-title" style="text-align:left;font-size:20px;padding-left:10px;color:${faceColor}">
+        ${card.face}
+            <div class="card-content" style="font-size:28px;padding-bottom:25px;">
+                <span class="${suitIcon}" style="color:${suitColor}">
+                </span>
+            </div>
+        </div>
+    </div>`;
+} 
+
+
+document.getElementById("btnDealCards").onclick = function () {
+let dealer = new Dealer();
+shuffle ();
+let cardOutputWithIcon = " ";
+for (let card of cards) {
+    switch (card.suit) {
+        case "Hearts": 
+            cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-heart", "red", "red");
+            break;  
+        case "Diamonds":
+            cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-diamond", "red", "red"); 
+            break;
+        case "Clubs":
+            cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-club", "black", "black"); 
+            break;
+        case "Spades":
+            cardOutputWithIcon += buildPlayingCard(card, "mdi mdi-spade", "black", "black");
+            break;
+        default:
+    }
+    console.log(card);
+}
+document.getElementById("player-card").innerHTML = cardOutputWithIcon;
+};
+
+
+</script>
 </body>
 </html>
-
